@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Figuras</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="container">
+        <div class="card">
+            <h2>Cuadrado</h2>
+            <div class="shape">□</div>
+            <label for="calcularAreaCuadrado">Base:</label>
+            <input type="number" id="calcularAreaCuadrado" placeholder="Ingrese base">
+            <label for="CalcularPerimetroCuadrado">Altura:</label>
+            <input type="number" id="CalcularPerimetroCuadrado" placeholder="Ingrese altura">
+            <button class="btn">Calcular Área</button>
+            <button class="btn">Calcular Perímetro</button>
+        </div>
+
+        <div class="card">
+            <h2>Rombo</h2>
+            <div class="shape">◇</div>
+            <label for="base-triangulo">Base:</label>
+            <input type="number" id="base-triangulo" placeholder="Ingrese base">
+            <label for="altura-triangulo">Altura:</label>
+            <input type="number" id="altura-triangulo" placeholder="Ingrese altura">
+            <button class="btn">Calcular Área</button>
+            <button class="btn">Calcular Perímetro</button>
+        </div>
+
+        <div class="card">
+            <h2>Rombo</h2>
+            <div class="shape">⏢</div>
+            <label for="base-triangulo">Base:</label>
+            <input type="number" id="base-triangulo" placeholder="Ingrese base">
+            <label for="altura-triangulo">Altura:</label>
+            <input type="number" id="altura-triangulo" placeholder="Ingrese altura">
+            <button class="btn">Calcular Área</button>
+            <button class="btn">Calcular Perímetro</button>
+        </div>
+    </div>
+    <script src="/controllers/FiguraController.js"></script>
+    <script src="/models/FiguraService.js"></script>
+</body>
+</html>
