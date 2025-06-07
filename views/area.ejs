@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Calcular Área</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Calcular Área</h2>
+
+            <form action="/area" method="POST">
+                <label for="figura">Figura:</label>
+                <select name="figura" id="figura" required>
+                    <option value="">Seleccione una figura</option>
+                    <option value="cuadrado">Cuadrado</option>
+                    <option value="rombo">Rombo</option>
+                    <option value="trapecio">Trapecio</option>
+                </select>
+
+                <!-- Cuadrado -->
+                <div id="cuadrado-fields" class="hidden">
+                    <label for="base">Base:</label>
+                    <input type="number" name="base" id="base" step="any" placeholder="Base del cuadrado" />
+
+                    <label for="altura">Altura:</label>
+                    <input type="number" name="altura" id="altura" step="any" placeholder="Altura del cuadrado" />
+                </div>
+
+                <!-- Rombo -->
+                <div id="rombo-fields" class="hidden">
+                    <label for="diagonalmayor">Diagonal Mayor:</label>
+                    <input type="number" name="diagonalmayor" id="diagonalmayor" step="any" placeholder="Diagonal mayor" />
+
+                    <label for="diagonalmenor">Diagonal Menor:</label>
+                    <input type="number" name="diagonalmenor" id="diagonalmenor" step="any" placeholder="Diagonal menor" />
+                </div>
+
+                <!-- Trapecio -->
+                <div id="trapecio-fields" class="hidden">
+                    <label for="basemayor">Base Mayor:</label>
+                    <input type="number" name="basemayor" id="basemayor" step="any" placeholder="Base mayor" />
+
+                    <label for="basemenor">Base Menor:</label>
+                    <input type="number" name="basemenor" id="basemenor" step="any" placeholder="Base menor" />
+
+                    <label for="alturatrapecio">Altura:</label>
+                    <input type="number" name="alturatrapecio" id="alturatrapecio" step="any" placeholder="Altura del trapecio" />
+</div>
+
+
+                <button type="submit" class="btn">Calcular Área</button>
+                <a href="/" class="btn" style="padding: 5px 10px; font-size: 0.85rem; margin-bottom: 15px; display: inline-block; width: fit-content;">🏠 Home</a>
+            </form>
+
+            <% if (typeof resultado !== 'undefined') { %>
+                <h3>Resultado: <%= resultado %></h3>
+            <% } %>
+        </div>
+    </div>
+    <script>
+        const figuraSelect = document.getElementById('figura');
+        const cuadradoFields = document.getElementById('cuadrado-fields');
+        const romboFields = document.getElementById('rombo-fields');
+        const trapecioFields = document.getElementById('trapecio-fields');
+
+        figuraSelect.addEventListener('change', () => {
+            const figura = figuraSelect.value;
+
+            cuadradoFields.classList.add('hidden');
+            romboFields.classList.add('hidden');
+            trapecioFields.classList.add('hidden');
+
+            if (figura === 'cuadrado') {
+                cuadradoFields.classList.remove('hidden');
+            } else if (figura === 'rombo') {
+                romboFields.classList.remove('hidden');
+            } else if (figura === 'trapecio') {
+                trapecioFields.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

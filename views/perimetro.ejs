@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Calcular Perímetro</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Calcular Perímetro</h2>
+
+            <div class="shape">□ ⏢ ◇</div>
+
+            <form action="/perimetro" method="POST">
+                <label for="figura">Figura:</label>
+                <select name="figura" id="figura" required>
+                    <option value="cuadrado">Cuadrado</option>
+                    <option value="rombo">Rombo</option>
+                    <option value="trapecio">Trapecio</option>
+                </select>
+
+                <label for="lado">Lado:</label>
+                <input type="number" name="lado" id="lado" step="any" placeholder="Ingrese el valor del lado" required />
+
+                <button type="submit" class="btn">Calcular Perímetro</button>
+                <a href="/" class="btn" style="padding: 5px 10px; font-size: 0.85rem; margin-bottom: 15px; display: inline-block; width: fit-content;">🏠 Home</a>
+            </form>
+
+            <% if (typeof resultado !== 'undefined') { %>
+                <h3>Resultado: <%= resultado %></h3>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
